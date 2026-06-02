@@ -16,32 +16,44 @@
   const header     = document.getElementById("header");
   const menuGrid   = document.getElementById("menuGrid");
 
-  /* ── Translation helper ── */
+  /* ── Translation helper (for data-key elements) ── */
   function t(key) {
     const dict = window.TRANSLATIONS[currentLang];
     const ru   = window.TRANSLATIONS["ru"];
     const val  = dict ? dict[key] : undefined;
     if (val === undefined || val === null || val === "")
-      return ru[key] !== undefined ? ru[key] : "";
+      return (ru && ru[key] !== undefined) ? ru[key] : "";
     return val;
   }
 
-  /* ── Apply language to all [data-key] elements ── */
+  /* ── Apply language to ALL translatable elements ── */
   function applyLanguage() {
     document.documentElement.lang = currentLang === "hy" ? "hy" : "ru";
 
+    /* 1. Elements with data-ru / data-hy attributes (HTML-inline translations) */
+    document.querySelectorAll("[data-ru]").forEach(el => {
+      const ru = el.dataset.ru;
+      const hy = el.dataset.hy;
+      if (currentLang === "hy" && hy && hy.trim() !== "") {
+        el.textContent = hy;
+      } else {
+        el.textContent = ru;
+      }
+    });
+
+    /* 2. Elements with data-key (JS translations.js driven) */
     document.querySelectorAll("[data-key]").forEach(el => {
-      const key = el.dataset.key;
-      el.textContent = t(key);
+      el.textContent = t(el.dataset.key);
     });
 
-    /* Handle href inside <a data-key-href> */
-    document.querySelectorAll("[data-key-href]").forEach(el => {
-      const key = el.dataset.keyHref;
-      const val = t(key);
-      if (val) el.setAttribute("href", val);
-    });
+    /* 3. Logo sub — driven by translations.js */
+    const logoSub = document.querySelector(".logo__sub");
+    if (logoSub) {
+      const val = t("logo_sub");
+      if (val) logoSub.textContent = val;
+    }
 
+    /* 4. Toggle button highlight */
     langRU.classList.toggle("active", currentLang === "ru");
     langHY.classList.toggle("active", currentLang === "hy");
 
@@ -55,7 +67,7 @@
     applyLanguage();
   });
 
-  /* ── Build menu from translations ── */
+  /* ── Build menu from translations.js ── */
   function buildMenu() {
     if (!menuGrid) return;
 
@@ -64,7 +76,7 @@
 
     const cats = ruCats.map((ruCat, i) => {
       const hyCat = hyCats[i] || {};
-      const useName = (currentLang === "hy" && hyCat.name && hyCat.name !== "")
+      const name  = (currentLang === "hy" && hyCat.name && hyCat.name !== "")
         ? hyCat.name : ruCat.name;
       const items = ruCat.items.map((rItem, j) => {
         const hItem = (hyCat.items && hyCat.items[j]) || {};
@@ -73,7 +85,7 @@
           desc: (currentLang === "hy" && hItem.desc && hItem.desc !== "") ? hItem.desc : rItem.desc
         };
       });
-      return { emoji: ruCat.emoji, name: useName, items };
+      return { emoji: ruCat.emoji, name, items };
     });
 
     if (activeTab >= cats.length) activeTab = 0;
@@ -85,8 +97,8 @@
       </button>
     `).join("");
 
-    const activeCat  = cats[activeTab];
-    const itemsHTML  = activeCat.items.map(item => `
+    const activeCat = cats[activeTab];
+    const itemsHTML = activeCat.items.map(item => `
       <div class="menu-item reveal">
         <span class="menu-item__name">${item.name || "—"}</span>
         ${item.desc ? `<span class="menu-item__desc">${item.desc}</span>` : ""}
@@ -148,7 +160,6 @@
     document.querySelectorAll(".reveal:not(.visible)").forEach(el => revealObserver.observe(el));
   }
 
-  /* Mark static sections for reveal */
   document.querySelectorAll(
     ".about__text, .about__visual, .contact__info, .contact__map-embed, .gallery__item, .badge"
   ).forEach(el => el.classList.add("reveal"));
