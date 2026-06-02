@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Համով պատառ — Вкусный кусочек</title>
+  <meta name="description" content="Ресторан быстрого питания Համով պատառ в селе Арзакан, Котайкская область, Армения" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <a href="#" class="logo">
+        <span class="logo__arm">Համով պատառ</span>
+        <span class="logo__sub" data-ru="Вкусный кусочек" data-hy="Համեղ կծում">Вкусный кусочек</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#about"   class="nav__link" data-ru="О нас"    data-hy="Մեր մասին">О нас</a>
+        <a href="#menu"    class="nav__link" data-ru="Меню"     data-hy="Մենյու">Меню</a>
+        <a href="#gallery" class="nav__link" data-ru="Галерея"  data-hy="Պատկերասրահ">Галерея</a>
+        <a href="#contact" class="nav__link" data-ru="Контакты" data-hy="Կապ">Контакты</a>
+      </nav>
+
+      <div class="header__right">
+        <!-- LANGUAGE TOGGLE -->
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-toggle__ru active" id="langRU">РУ</span>
+          <span class="lang-toggle__sep">|</span>
+          <span class="lang-toggle__hy" id="langHY">ՀՅ</span>
+        </button>
+
+        <!-- BURGER -->
+        <button class="burger" id="burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__content container">
+      <p class="hero__tag" data-ru="Ресторан быстрого питания · Арзакан" data-hy="Արագ սննդի ռեստորան · Արզաքան">
+        Ресторан быстрого питания · Арзакан
+      </p>
+      <h1 class="hero__title">Համով<br/>Պատառ</h1>
+      <p class="hero__desc"
+         data-ru="Домашняя еда с армянской душой — в самом сердце Арзакана"
+         data-hy="Տնական ուտելիք հայկական հոգով — Արզաքանի սրտում">
+        Домашняя еда с армянской душой — в самом сердце Арзакана
+      </p>
+      <a href="#menu" class="btn btn--hero"
+         data-ru="Посмотреть меню" data-hy="Տեսնել մենյուն">
+        Посмотреть меню
+      </a>
+    </div>
+    <div class="hero__scroll-hint">↓</div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container about__grid">
+      <div class="about__text">
+        <span class="section-label" data-ru="О нас" data-hy="Մեր մասին">О нас</span>
+        <h2 class="section-title"
+            data-ru="Вкус, который остаётся в сердце"
+            data-hy="Համը, որ մնում է սրտում">
+          Вкус, который остаётся в сердце
+        </h2>
+        <p data-ru="Ресторан «Համով պատառ» — это уютное место в селе Арзакан Котайкской области, где каждое блюдо готовится с любовью из свежих местных продуктов."
+           data-hy="«Համով պատառ» ռեստորանը հարմարավետ վայր է Կոթայքի մարզի Արզաքան գյուղում, որտեղ յուրաքանչյուր ճաշ պատրաստվում է սիրով՝ թարմ տեղական բաղադրիչներից:">
+          Ресторан «Համով Պատառ» — это уютное место в селе Арзакан Котайкской области, где каждое блюдо готовится с любовью из свежих местных продуктов.
+        </p>
+        <p data-ru="Мы предлагаем быструю и вкусную армянскую кухню — от традиционных блюд до любимых перекусов. Приходите одни или с семьёй — у нас всегда тепло и вкусно!"
+           data-hy="Մենք առաջարկում ենք արագ և համեղ հայկական խոհանոց՝ ավանդական ուտեստներից մինչև սիրված նախուտեստներ: Արի՛ ընտանիքով — մեզ մոտ միշտ ջերմ է և համեղ:">
+          Мы предлагаем быструю и вкусную армянскую кухню — от традиционных блюд до любимых перекусов. Приходите одни или с семьёй — у нас всегда тепло и вкусно!
+        </p>
+
+        <div class="about__badges">
+          <div class="badge">
+            <span class="badge__icon">🕐</span>
+            <span class="badge__label" data-ru="Быстрое обслуживание" data-hy="Արագ սպասարկում">Быстрое обслуживание</span>
+          </div>
+          <div class="badge">
+            <span class="badge__icon">🥗</span>
+            <span class="badge__label" data-ru="Свежие продукты" data-hy="Թարմ բաղադրիչներ">Свежие продукты</span>
+          </div>
+          <div class="badge">
+            <span class="badge__icon">❤️</span>
+            <span class="badge__label" data-ru="С любовью" data-hy="Սիրով">С любовью</span>
+          </div>
+        </div>
+      </div>
+      <div class="about__visual">
+        <div class="about__img-frame">
+          <div class="about__img-placeholder">
+            <span>🍖</span>
+            <!-- Замените на <img src="images/about.jpg" alt="Ресторан"> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu section" id="menu">
+    <div class="container">
+      <span class="section-label" data-ru="Наше меню" data-hy="Մեր մենյուն">Наше меню</span>
+      <h2 class="section-title"
+          data-ru="Что мы готовим"
+          data-hy="Ինչ ենք պատրաստում">
+        Что мы готовим
+      </h2>
+
+      <div class="menu__grid" id="menuGrid">
+        <!-- menu items injected by JS from translations.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+      <span class="section-label" data-ru="Галерея" data-hy="Պատկերասրահ">Галерея</span>
+      <h2 class="section-title"
+          data-ru="Наши моменты"
+          data-hy="Մեր պահերը">
+        Наши моменты
+      </h2>
+    </div>
+    <div class="gallery__strip">
+      <!-- Photo placeholders — replace src with real images -->
+      <div class="gallery__item"><span>🍗</span><p data-ru="Блюда" data-hy="Ուտեստներ">Блюда</p></div>
+      <div class="gallery__item"><span>🥙</span><p data-ru="Закуски" data-hy="Նախուտեստներ">Закуски</p></div>
+      <div class="gallery__item"><span>🍺</span><p data-ru="Напитки" data-hy="Ըմպելիքներ">Напитки</p></div>
+      <div class="gallery__item"><span>🏠</span><p data-ru="Интерьер" data-hy="Ինտերիեր">Интерьер</p></div>
+      <div class="gallery__item"><span>🎉</span><p data-ru="Мероприятия" data-hy="Միջոցառումներ">Мероприятия</p></div>
+    </div>
+    <p class="gallery__instagram">
+      <a href="https://www.instagram.com/hamov.patar/" target="_blank" rel="noopener">
+        <span data-ru="Больше фото в нашем Instagram →" data-hy="Ավելի շատ լուսանկար մեր Instagram-ում →">Больше фото в нашем Instagram →</span>
+      </a>
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="container contact__grid">
+      <div class="contact__info">
+        <span class="section-label" data-ru="Контакты" data-hy="Կապ">Контакты</span>
+        <h2 class="section-title"
+            data-ru="Найдите нас"
+            data-hy="Գտե՛ք մեզ">
+          Найдите нас
+        </h2>
+
+        <div class="contact__block">
+          <div class="contact__item">
+            <span class="contact__icon">📍</span>
+            <div>
+              <strong data-ru="Адрес" data-hy="Հասցե">Адрес</strong>
+              <p data-ru="Село Арзакан, Котайкская область, Армения" data-hy="Արզաքան գյուղ, Կոթայքի մարզ, Հայաստան">
+                Село Арзакан, Котайкская область, Армения
+              </p>
+            </div>
+          </div>
+
+          <div class="contact__item">
+            <span class="contact__icon">🕐</span>
+            <div>
+              <strong data-ru="Часы работы" data-hy="Աշխատանքային ժամեր">Часы работы</strong>
+              <p data-ru="Ежедневно: 10:00 – 22:00" data-hy="Ամեն օր՝ 10:00 – 22:00">Ежедневно: 10:00 – 22:00</p>
+            </div>
+          </div>
+
+          <div class="contact__item">
+            <span class="contact__icon">📱</span>
+            <div>
+              <strong data-ru="Телефон" data-hy="Հեռախոս">Телефон</strong>
+              <p><a href="tel:+37400000000">+374 (00) 000-000</a>
+                <!-- ⚠️ ЗАМЕНИТЕ НА РЕАЛЬНЫЙ НОМЕР ТЕЛЕФОНА -->
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact__social">
+          <a href="https://www.instagram.com/hamov.patar/" target="_blank" rel="noopener" class="social-btn social-btn--ig">
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/hamov.patar2" target="_blank" rel="noopener" class="social-btn social-btn--fb">
+            Facebook
+          </a>
+        </div>
+
+        <div class="contact__maps">
+          <a href="https://share.google/h1nc5urTw98ZO3rKa" target="_blank" rel="noopener" class="map-btn">
+            🗺 Google Maps
+          </a>
+          <a href="http://yandex.com/maps/org/hamov_patar/28297419023/?ll=44.609669%2C40.436702&z=18.31" target="_blank" rel="noopener" class="map-btn">
+            🗺 Яндекс Карты
+          </a>
+        </div>
+      </div>
+
+      <div class="contact__map-embed">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d750.9!2d44.609669!3d40.436702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDI2JzEyLjEiTiA0NMKwMzYnMzQuOCJF!5e0!3m2!1sru!2sam!4v1620000000000"
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="Местоположение ресторана">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__logo">
+        <span>Համով պատառ</span>
+        <small data-ru="© 2025 Все права защищены" data-hy="© 2025 Բոլոր իրավունքները պաշտպանված են">
+          © 2025 Все права защищены
+        </small>
+      </div>
+      <div class="footer__links">
+        <a href="https://www.instagram.com/hamov.patar/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/hamov.patar2" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
